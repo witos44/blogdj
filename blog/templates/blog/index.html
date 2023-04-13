@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %} 
+
+{% block title %}My Django Homepage.{% endblock title %} 
+
+{% block body %}
+
+<!--NavBar Started-->
+{% include 'blog/navbar.html' %}
+<!--NavBar End-->
+
+<!--Splash Started-->
+{% include 'blog/splash.html' %}
+<!--Splash End-->
+
+<!--Page Content Start-->
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-12 col-lg-8">
+        <!--Load Data step by step Started-->
+            {% include 'blog/post-list-elements.html' %}
+        <!--Load Data step by step End-->
+    </div>
+    <div class="d-none d-lg-block col-4"></div>
+  </div>
+</div>
+<!--Page Content ends-->
+<!--Footer Start-->
+<!--Footer End-->
+
+{% endblock body %}
