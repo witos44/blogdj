@@ -15,5 +15,7 @@ In this Project we have following functionalities:
     BASE_DIR / "static"
 ]`
 * Add Google Fonts
-* Use Factory-boy and Faker to generate Fake Data for Blog Posts
+* Use Factory-boy and Faker to generate Fake Data for Blog Posts. By going into Shell. `from blog.factory import PostFactory` then `x = PostFactory.create_batch(100)` to generate 100 posts. Then `exit()`
 * htmx is a library that allows you to access modern browser features directly from HTML, rather than using javascript.[Django_HTMX]('https://pypi.org/project/django-htmx/')
+* We use django-taggit to use it to implement Tags with Blogs[Django-Taggit]('https://pypi.org/project/django-taggit/')
+* We will use Django Custom Template feature to send multiple context data to the HTML page. We will save it into the settings.py of the project

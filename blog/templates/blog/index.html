@@ -20,7 +20,14 @@
             {% include 'blog/post-list-elements.html' %}
         <!--Load Data step by step End-->
     </div>
-    <div class="d-none d-lg-block col-4"></div>
+    <div class="d-none d-lg-block col-4">
+      <!--Load Tags Started-->
+      {% sidebar_tag_cloud %} <!--Then we will call the function-->
+      <!--Load Tags End-->
+      <!--Include Footer Started-->
+      {% include 'blog/footer.html' %} <!--Then we will call the function-->
+      <!--Include Footer End-->
+    </div>
   </div>
 </div>
 <!--Page Content ends-->

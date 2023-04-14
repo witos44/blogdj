@@ -21,4 +21,11 @@ class PostFactory(factory.django.DjangoModelFactory):
     slug = 'x'
     author = factory.SubFactory(UserFactory)
     content = 'x'
-    status = 'published'
+    status = 'Published'
+    
+    @factory.post_generation
+    def tags(self,create,extracted,**kwargs):
+        if not create:
+            return
+        if extracted:
+            self.tags.add(*extracted)
