@@ -19,3 +19,4 @@ In this Project we have following functionalities:
 * htmx is a library that allows you to access modern browser features directly from HTML, rather than using javascript.[Django_HTMX]('https://pypi.org/project/django-htmx/')
 * We use django-taggit to use it to implement Tags with Blogs[Django-Taggit]('https://pypi.org/project/django-taggit/')
 * We will use Django Custom Template feature to send multiple context data to the HTML page. We will save it into the settings.py of the project
+* Use SLUG field from `models.py` to generate single post view

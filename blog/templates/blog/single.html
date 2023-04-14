@@ -1,0 +1,41 @@
+{% extends "blog/3-col-template.html" %}
+
+{% block content-left %}
+{% include 'blog/sec-navbar.html' %}
+{% endblock content-left %}
+
+{% block content-mid %}
+<div class='text-muted'>{{ post.author }}</div>
+<div class='text-muted'>{{ post.updated_at|date:'M d' }}</div>
+<h1 class='fw-bold pb-2'>{{ post.title }}</h1>
+<h2 class='text-muted fs-4 pb-4'>{{ post.subtitle }}</h2>
+<p>{{ post.content }}</p>
+{% endblock content-mid %}
+
+{% block content-right %}
+{% sidebar_tag_cloud %}
+
+<div class="col-12">
+    <div class='pb-3'>
+        More from  {{ post.author }}
+    </div>
+    <div>
+        {% for post in related %}
+        <a href="{{ post.get_absolute_url }}" class='text-decoration-none'>
+            <div class='card mb-3 border-0 ps-1'>
+                <div class="row">
+                    <div class="col-9 pe-2">
+                        <span class='text-dark small'>{{ post.author }}</span>
+                        <h1 class='mb-1 fs-6 p-0 text-dark fw-bold'>{{ post.title|truncatechars:80 }}</h1>
+                    </div>
+                    <div class="col-3">
+                    <img src="https://picsum.photos/200/300" alt="{{ post.title }}" class='img-fluid float-end' width='200' height='300'>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content-right %}

@@ -1,8 +1,7 @@
 {% for post in posts %}
-        <a href="#" class='text-decoration-none'>
+<a href="{{ post.get_absolute_url }}" class='text-decoration-none'>
 {% if forloop.last %}
-            <div class="card border-0 pb-3 pb-sm-5" hx-trigger='revealed' hx-get="{% url 'homepage' %}?page={{ page_obj.number|add:1 }}"
-            hx-swap='afterend'>
+<div class="card border-0 pb-3 pb-sm-5" hx-trigger='revealed' hx-get="{% url 'homepage' %}?page={{ page_obj.number|add:1 }}" hx-swap='afterend'>
 {% else %}
             <div class="card border-0 pb-3 pb-sm-5">
 {% endif %}
@@ -16,9 +15,9 @@
                     </div>
                     </div>
                     <div class="col-4">
-                        <img src="https://picsum.photos/200/300" alt="{{ post.title }}" class='img-fluid float-end' width='200' height='300'>
+                    <img src="https://picsum.photos/200/300" alt="{{ post.title }}" class='img-fluid float-end' width='200' height='300'>
                     </div>
                 </div>
         </div>
-        </a> 
+</a> 
         {% endfor %}
